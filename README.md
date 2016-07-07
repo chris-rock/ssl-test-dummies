@@ -10,6 +10,13 @@ Requires docker.
 docker build -t ssldummy .
 ```
 
+In case you need a container with ssh support:
+
+```bash
+docker build -t ssldummy-ssl -f Dockerfile.with-ssh .
+docker run -e ssl=tls12 -p 2222:22 -p 5443:443 -d ssldummy-ssl
+```
+
 ## Run
 
 Comfortably via:
